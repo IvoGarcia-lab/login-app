@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Página de Login -->
+        <div id="loginPage" class="page active">
+            <div class="form-container">
+                <h1>Login</h1>
+                <form id="loginForm">
+                    <input type="text" id="loginUsername" placeholder="Username" required>
+                    <input type="password" id="loginPassword" placeholder="Senha" required>
+                    <button type="submit">Entrar</button>
+                </form>
+                <p>Não tem conta? <a href="#" onclick="showRegister()">Registrar</a></p>
+                <div id="loginError" class="error"></div>
+            </div>
+        </div>
+
+        <!-- Página de Registro -->
+        <div id="registerPage" class="page">
+            <div class="form-container">
+                <h1>Registrar</h1>
+                <form id="registerForm">
+                    <input type="text" id="registerUsername" placeholder="Username" required>
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                    <input type="password" id="registerPassword" placeholder="Senha" required>
+                    <button type="submit">Criar Conta</button>
+                </form>
+                <p>Já tem conta? <a href="#" onclick="showLogin()">Login</a></p>
+                <div id="registerError" class="error"></div>
+            </div>
+        </div>
+
+        <!-- Página Dashboard (protegida) -->
+        <div id="dashboardPage" class="page">
+            <div class="dashboard">
+                <h1>Bem-vindo, <span id="username"></span>!</h1>
+                <div class="profile-info">
+                    <h2>Seu Perfil</h2>
+                    <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+                    <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+                    <p><strong>Membro desde:</strong> <span id="profileCreated"></span></p>
+                </div>
+                <button onclick="logout()" class="logout-btn">Sair</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
